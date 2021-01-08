@@ -1,0 +1,30 @@
+﻿@page "/"
+
+<p>Hello, @upercase(name)</p>
+
+@*<button @onclick="@(()=>Console.WriteLine("i've clicked"))">ClickMe</button>*@
+<button @onclick="@WriteInLog">ClickMe</button>
+<div>
+    <h3>Movie</h3>
+    <p>Title: @Lucifer.Title</p>
+    <p>ReleaseDate: @Lucifer.ReleaseDate.ToString("dd MM yyyy")</p>
+
+</div>
+
+@code{
+
+    string name = "vijay";
+    string upercase(string value) => value.ToUpper();
+
+    Movie Lucifer = new Movie()
+    {
+        Title = "Lucifer",
+        ReleaseDate = new DateTime(2019, 8, 5)
+    };
+
+    void WriteInLog()
+    {
+        Console.WriteLine("i've been clicked! (from method)");
+
+    }
+}
