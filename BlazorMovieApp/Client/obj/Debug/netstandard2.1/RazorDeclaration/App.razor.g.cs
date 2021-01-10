@@ -83,6 +83,13 @@ using BlazorMovieApp.Shared.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 11 "C:\MydeskTop\Development\LAB\c#\Blazor\BlazorMovieApp\BlazorMovieApp\Client\_Imports.razor"
+using BlazorMovieApp.Client.Helpers;
+
+#line default
+#line hidden
+#nullable disable
     public partial class App : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

@@ -84,6 +84,13 @@ using BlazorMovieApp.Shared.Entities;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\MydeskTop\Development\LAB\c#\Blazor\BlazorMovieApp\BlazorMovieApp\Client\_Imports.razor"
+using BlazorMovieApp.Client.Helpers;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\MydeskTop\Development\LAB\c#\Blazor\BlazorMovieApp\BlazorMovieApp\Client\Pages\FetchData.razor"
 using BlazorMovieApp.Shared;
 
