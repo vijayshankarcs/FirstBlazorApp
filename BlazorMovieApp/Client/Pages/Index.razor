@@ -1,0 +1,76 @@
+﻿@page "/"
+@*<p>Hello, @upercase(name)</p>*@
+
+@*<button @onclick="@(()=>Console.WriteLine("i've clicked"))">ClickMe</button>*@
+@*<button @onclick="@WriteInLog">ClickMe</button>*@
+<div>
+    <h3>Movie</h3>
+    @*<MovieList Movies="movies">
+            <NullTemplate>
+                <span style="color:red">This is loading...</span>
+            </NullTemplate>
+            <EmptyTemplate>
+                <span style="color:blue">No records found</span>
+            </EmptyTemplate>
+
+        </MovieList>*@
+    <MovieList Movies="movies" />
+</div>
+<button @onclick="AddNewMovie">Add New Movie</button>
+
+@*<div>
+        <h3>Create Movie</h3>
+       //arbitray parameter example direct
+        <DummyTextbox @attributes="@(new Dictionary<string, object>() {
+                                         { "placeholder", "new movie name2"},
+                                         { "disabled", "true"},
+
+                                     })" />
+         //arbitray parameter example using code
+        <DummyTextbox @attributes="dummytextbox" />
+        //arbitray parameter example using direct
+        <DummyTextbox placeholder="Movie name" />
+
+    </div>*@
+
+@code{
+
+    //string name = "vijay";
+    //string upercase(string value) => value.ToUpper();
+
+
+
+    //Movie Lucifer = new Movie()
+    //{
+    //    Title = "Lucifer",
+    //    ReleaseDate = new DateTime(2019, 8, 5)
+    //};
+
+    //void WriteInLog()
+    //{
+    //    Console.WriteLine("i've been clicked! (from method)");
+
+    //}
+    private List<Movie> movies;
+    private Dictionary<string, object> dummytextbox = new Dictionary<string, object>() {
+                                     { "placeholder", "new movie name"},
+                                     { "disabled", "true"},
+
+                                 };
+    protected async override Task OnInitializedAsync()
+    {
+        await Task.Delay(3000);
+
+        movies = new List<Movie>(){
+            new Movie(){  Title = "Lucifer",ReleaseDate = new DateTime(2019, 8, 5)},
+            new Movie() { Title = "Varane Avashyamund", ReleaseDate = new DateTime(2020, 6, 10) },
+            new Movie(){  Title = "Trance",ReleaseDate = new DateTime(2020, 10, 15)}
+            };
+
+    }
+    private void AddNewMovie()
+    {
+
+        movies.Add(new Movie() { Title = "new1", ReleaseDate = DateTime.Today });
+    }
+}
